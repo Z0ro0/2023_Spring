@@ -5,8 +5,9 @@ import org.springframework.context.annotation.Configuration;
 
 @Configuration
 public class MyConfig {
+    // @Bean("helloPerson")
     @Bean
-    public Person myPerson(){//myPerson(메서드)이 bean의 이름이 됨
+    public Person myPerson() {
         Person p = new Person("John", 20);
         p.setSomething("something");
         return p;
