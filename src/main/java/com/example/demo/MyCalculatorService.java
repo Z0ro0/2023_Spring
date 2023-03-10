@@ -1,6 +1,7 @@
 package com.example.demo;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
 
 @Service
@@ -21,8 +22,10 @@ public class MyCalculatorService {
         return calculator.add(a, b);
     }
 
-    public void iNeedDepency(MyBean myBean, Calculator calculator){
+    @Autowired
+    public void iNeedDepency(MyBean myBean, @Qualifier("myPerson")Person person, Calculator calculator){
         System.out.println("INeedDepency");
+        //System.out.println(Person);
         System.out.println(myBean);
         System.out.println(calculator);
     }
